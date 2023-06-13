@@ -1,0 +1,27 @@
+<div class="row">
+  <h1 class="mt-5">Bienvenido</h1>
+  <h3>Peliculas y series. Explora ahora.</h3>
+  <form class="d-flex mb-5" role="search">
+    <input
+      class="form-control me-2"
+      type="search"
+      placeholder="pelicula, serie..."
+      aria-label="Search"
+    />
+    <button class="btn btn-primary" type="button">Buscar</button>
+  </form>
+</div>
+<div class="row mt-5">
+  <h5>Populares</h5>
+  <div class="row row-cols-2 mt-4">
+    <app-cartel-pelicula
+      *ngFor="let movie of listMoviesUpcoming"
+      [id]="movie.id"
+      [img]="movie.poster_path"
+      [title]="movie.title || movie.name"
+      [overview]="movie.overview"
+      [release_date]="movie.release_date"
+      class="col mb-4"
+    ></app-cartel-pelicula>
+  </div>
+</div>

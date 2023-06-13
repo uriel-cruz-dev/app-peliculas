@@ -1,0 +1,11 @@
+<div class="row row-cols-2 mt-4">
+  <app-cartel-pelicula
+    *ngFor="let movie of listMovies"
+    [id]="movie.id"
+    [img]="movie.poster_path"
+    [title]="movie.title || movie.name"
+    [overview]="movie.overview"
+    [release_date]="movie.release_date"
+    class="col mb-4"
+  ></app-cartel-pelicula>
+</div>
